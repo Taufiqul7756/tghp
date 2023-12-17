@@ -22,23 +22,20 @@ const Footer = () => {
             <Link href="#">TVs</Link>
             <Link href="#">Accessories</Link>
           </FooterList>
-          {/* <FooterList> */}
-          {/* <h3 className="text-base font-bold mb-2">Customer Service</h3>
+          <FooterList>
+            <h3 className="text-base font-bold mb-2">Customer Service</h3>
             <Link href="#">Contact Us</Link>
             <Link href="#">Shipping Policy</Link>
             <Link href="#">Returns & Exchanges</Link>
-            <Link href="#">FAQs</Link> */}
-          {/* </FooterList> */}
-          <div>
-            <i src="https://ibb.co/XSzTvJ2" alt="" />
-          </div>
+            <Link href="#">FAQs</Link>
+          </FooterList>
+
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-base font-bold mb-2">About Me</h3>
             <p className="mb-2">
-              Hi, I'm Monir. I'm a tech enthusiast just like you. I love to
-              create tech content with good video editing. On this channel,
-              you'll find informative & fun-to-watch tech content in the Bangla
-              language.
+              Hi, Im Monir. Im a tech enthusiast just like you. I love to create
+              tech content with good video editing. On this channel, youll find
+              informative & fun-to-watch tech content in the Bangla language.
             </p>
             <p>&copy; {new Date().getFullYear()} TGHP. All rights reserved</p>
           </div>
