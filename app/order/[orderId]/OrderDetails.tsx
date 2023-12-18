@@ -13,6 +13,8 @@ interface OrderDetailsProps {
 }
 
 const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
+  const amount = order.amount / 100;
+
   return (
     <div className="max-w-[1150px] m-auto flex flex-col gap-2">
       <div className="mt-8">
@@ -20,8 +22,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
       </div>
       <div>Order ID: {order.id}</div>
       <div>
-        Total Amount:{" "}
-        <span className="font-bold">{formatPrice(order.amount)}</span>
+        Total Amount: <span className="font-bold">{formatPrice(amount)}</span>
       </div>
       <div className="flex gap-2 items-center">
         <div>Payment status:</div>
