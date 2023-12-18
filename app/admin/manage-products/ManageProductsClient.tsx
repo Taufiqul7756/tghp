@@ -153,7 +153,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
 
       await handleImageDelete();
 
-      axios
+      await axios
         .delete(`/api/product/${id}`)
         .then((res) => {
           toast.success("Product deleted");
