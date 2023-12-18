@@ -18,6 +18,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
     data.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
     data.reviews.length;
 
+  console.log(productRating);
+
   return (
     <div
       onClick={() => router.push(`/product/${data.id}`)}
