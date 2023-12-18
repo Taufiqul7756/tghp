@@ -59,9 +59,20 @@ const AddProductForm = () => {
     },
   });
 
+  const updateCustomValue = useCallback(
+    (id: string, value: any) => {
+      setValue(id, value, {
+        shouldValidate: true,
+        shouldDirty: true,
+        shouldTouch: true,
+      });
+    },
+    [setValue]
+  );
+
   useEffect(() => {
-    setCustomValue("images", images);
-  }, []);
+    updateCustomValue("images", images);
+  }, [images, updateCustomValue]);
 
   useEffect(() => {
     if (isProductCreated) {
@@ -69,7 +80,7 @@ const AddProductForm = () => {
       setImages(null);
       setIsProductCreated(false);
     }
-  }, []);
+  }, [isProductCreated, reset]);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     console.log("Product Data", data);
