@@ -25,7 +25,6 @@ const HomeBanner = () => {
           />
         </div>
       </div>
-      <Categories />
     </div>
   );
 };
