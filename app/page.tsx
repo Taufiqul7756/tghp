@@ -6,29 +6,32 @@ import { truncateText } from "@/utils/truncateText";
 import ProductCard from "./components/products/ProductCard";
 import getProducts, { IProductParams } from "@/actions/getProducts";
 import NullData from "./components/NullData";
+import Categories from "./components/nav/Categories";
 
-interface HomeProps{
-  searchParams: IProductParams
+interface HomeProps {
+  searchParams: IProductParams;
 }
 
-export default async function Home({searchParams}: HomeProps) {
-  const products = await getProducts(searchParams)
+export default async function Home({ searchParams }: HomeProps) {
+  const products = await getProducts(searchParams);
 
-  if(products.length === 0){
-    return <NullData title = 'Oops! No products found. Click "All" to clear filters'/>
+  if (products.length === 0) {
+    return (
+      <NullData title='Oops! No products found. Click "All" to clear filters' />
+    );
   }
 
   //Fisher-Yates shuffle algorithm
-  function shuffleArray(array: any){
-    for(let i = array.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i+1));
-      [array[i], array[j]] = [array[j], array[i]]
+  function shuffleArray(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
 
-    return array
+    return array;
   }
 
-  const shuffledProducts = shuffleArray(products)
+  const shuffledProducts = shuffleArray(products);
 
   return (
     <div className="p-8">
@@ -36,9 +39,12 @@ export default async function Home({searchParams}: HomeProps) {
         <div>
           <HomeBanner />
         </div>
+        <div className="p-4">
+          <Categories />
+        </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
           {shuffledProducts.map((product: any) => {
-            return <ProductCard data={product} key={product.id}/>;
+            return <ProductCard data={product} key={product.id} />;
           })}
         </div>
       </Container>
