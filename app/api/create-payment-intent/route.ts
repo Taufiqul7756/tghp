@@ -15,6 +15,7 @@ const calculateOrderAmount = (items: CartProductType[]) => {
   }, 0);
 
   const price: any = Math.floor(totalPrice);
+  console.log("totalPrice-->", totalPrice);
 
   return price;
 };
@@ -88,6 +89,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ paymentIntent });
   }
 
-   // Return a default response (e.g., an error response) if none of the conditions are met
-   return NextResponse.error();
+  // Return a default response (e.g., an error response) if none of the conditions are met
+  return NextResponse.error();
 }
