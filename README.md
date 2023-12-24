@@ -57,4 +57,4 @@ Welcome to the TG HodgePodge website, a Next.js project that combines a blog and
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/TG-HodgePodge-Website.git
+   git clone https://github.com/Taufiqul7756/tghp.git
