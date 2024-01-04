@@ -34,6 +34,9 @@ Welcome to the TG HodgePodge website, a Next.js project that combines a blog and
 4. **Manage Orders:**
    - Monitor the number of orders, view pending orders, and manage order statuses (dispatched, delivered).
    - Access detailed order information.
+5. ** Credentials for admin test : **
+   - Email: admin@johurul.com
+   - Password: admin
 
 ## Tech Stack
 
